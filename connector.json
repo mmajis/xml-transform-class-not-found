@@ -1,0 +1,15 @@
+{
+    "name": "file-source",
+    "config": {
+		"connector.class": "FileStreamSource",
+		"tasks.max": "1",
+		"file": "/tmp/data/data.xml",
+		"name": "file-source",
+        "topic": "xmltopic",
+        "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "transforms": "FromXml",
+		"transforms.FromXml.type": "com.github.jcustenborder.kafka.connect.transform.xml.FromXml$Value",
+		"transforms.FromXml.schema.path": "https://some-schema-url-here-but-issue-will-surface-before-we-get-to-request-it/schema.xsd"
+    }
+}
