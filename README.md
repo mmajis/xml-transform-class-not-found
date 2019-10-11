@@ -7,5 +7,6 @@ The environment is a copy of https://github.com/confluentinc/examples/tree/5.3.1
 Steps to reproduce the issue:
 
 * Run `docker-compose up -d --build`
+* Wait some time for Kafka Connect to be up. Follow e.g. `docker logs xml-connect -f` to see when done starting
 * Run `./post_connector.sh`
 
